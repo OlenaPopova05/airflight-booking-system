@@ -6,5 +6,8 @@ set(CMAKE_CXX_STANDARD 17)
 add_executable(untitled4 main.cpp
         Ticket.h
         Ticket.cpp
+        Airplane.h
+        Manager.h
+        FileReader.h
 
 )
