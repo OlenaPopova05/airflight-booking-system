@@ -1,11 +1,11 @@
 #pragma once
 #include <string>
-
-using namespace std;
+#include "Manager.h"
 
 class FileReader {
 private:
-    string filename;
+    std::string filename;
 public:
-    void read(const string& filename);
+    void read(const std::string& filename, Manager& manager);
+    void fillManager(Manager& manager);
 };

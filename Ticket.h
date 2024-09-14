@@ -1,19 +1,24 @@
 #pragma once
 #include <string>
-using namespace std;
 
 class Ticket {
 private:
-    string username;
+    std::string username;
     int row;
-    string seat;
-    string flightNumber;
-    string date;
-    string price;
+    int seat;
+    std::string flightNumber;
+    std::string date;
+    int price;
     int ticketID;
     bool availability;
 public:
-    Ticket(const string& username, int row, const string& seat, const string& flightNumber,
-        const string& date, const string& price, int ticketID, bool availability);
+    Ticket(int row, int seat, const std::string& username, const std::string& flightNumber,
+        const std::string& date, int price, int ticketID, bool availability);
+
+    bool getAvailability() const;
+    void setAvailability(bool availability);
+    int getTicketID() const;
+    std::string getUsername() const;
 };
+
 

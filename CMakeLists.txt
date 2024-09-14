@@ -9,5 +9,8 @@ add_executable(untitled4 main.cpp
         Airplane.h
         Manager.h
         FileReader.h
+        FileReader.cpp
+        Manager.cpp
+        Airplane.cpp
 
 )

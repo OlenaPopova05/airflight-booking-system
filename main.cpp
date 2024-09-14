@@ -1,6 +1,10 @@
 #include <iostream>
+#include "FileReader.h"
+#include "Manager.h"
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    Manager manager;
+    FileReader fileReader;
+    fileReader.read("/Users/olenapopova/Documents/GitHub/untitled4/config.txt", manager);
     return 0;
 }
