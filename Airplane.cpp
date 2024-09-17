@@ -10,3 +10,17 @@ Airplane::Airplane(const std::string& date, const std::string& flight, int seat,
     this->rowPriceData = rowPriceData;
     this->airplaneSeats = airplaneSeats;
 }
+void Airplane::getAvailableSeats() const {
+    for (const auto& row : airplaneSeats) {
+        for (const auto& seat : row) {
+            if (seat.getAvailability()) {
+                std::string letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+                std::cout << seat.getRow() << letters[seat.getSeat() - 1] << " " << seat.getPrice() << "$" << std::endl;
+            }
+        }
+    }
+}
+
+int Airplane::getSeat() const {
+    return seat;
+}

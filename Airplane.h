@@ -15,7 +15,7 @@ public:
              const std::vector<std::pair<int, int>>& rowPriceData,
              const std::vector<std::vector<Ticket>>& airplaneSeats);
 
-    std::vector<std::string> getAvailableSeats() const;
+    void getAvailableSeats() const;
     std::vector<std::string> getBookedSeats() const;
     void bookTicket(const std::string& seat, int row, const std::string& username,
                     const std::string& flightNumber, const std::string& date,
@@ -23,4 +23,5 @@ public:
     void returnTicket(int ticketID);
     Ticket* viewTicketByID(int ticketID);
     std::vector<Ticket> viewTicketsByUser() const;
+    int getSeat() const;
 };

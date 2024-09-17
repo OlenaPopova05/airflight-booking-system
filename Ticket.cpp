@@ -28,3 +28,15 @@ std::string Ticket::getUsername() const {
     return username;
 }
 
+int Ticket::getRow() const {
+    return row;
+}
+
+int Ticket::getSeat() const {
+    return seat;
+}
+
+int Ticket::getPrice() const {
+    return price;
+}
+

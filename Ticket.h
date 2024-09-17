@@ -19,6 +19,9 @@ public:
     void setAvailability(bool availability);
     int getTicketID() const;
     std::string getUsername() const;
+    int getRow() const;
+    int getSeat() const;
+    int getPrice() const;
 };
 
 
