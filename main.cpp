@@ -81,6 +81,31 @@ int main() {
                 }
             }
         }
+        else if (command == "viewUser") {
+            std::string username;
+            std::cout << "Enter username: ";
+            std::cin >> username;
+            bool found = false;
+            for (const auto& airplane : manager.getManagingMap()) {
+                std::vector<Ticket> tickets = airplane.second->viewTicketsByUser();
+                for (const auto& ticket : tickets) {
+                    if (ticket.getUsername() == username) {
+                        std::string letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+                        int seatIndex = ticket.getSeat();
+                        char seat = letters[seatIndex - 1];
+                        int row = ticket.getRow();
+                        std::cout << "Flight: " << ticket.getFlightNumber() << std::endl;
+                        std::cout << "Date: " << ticket.getDate() << std::endl;
+                        std::cout << "Seat: " << row << seat << std::endl;
+                        std::cout << "Price: " << ticket.getPrice() << "$" << std::endl;
+                        found = true;
+                    }
+                }
+            }
+            if (!found) {
+                std::cout << "No tickets found" << std::endl;
+            }
+        }
     }
     return 0;
 }

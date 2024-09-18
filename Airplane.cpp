@@ -60,3 +60,15 @@ Ticket* Airplane::viewTicketByID(int ticketID) {
     }
     return nullptr;
 }
+
+std::vector<Ticket> Airplane::viewTicketsByUser() const {
+    std::vector<Ticket> tickets;
+    for (const auto& row : airplaneSeats) {
+        for (const auto& seat : row) {
+            if (seat.getUsername() != "") {
+                tickets.push_back(seat);
+            }
+        }
+    }
+    return tickets;
+}
