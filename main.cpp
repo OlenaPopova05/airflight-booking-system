@@ -41,11 +41,20 @@ int main() {
                 int seatIndex = letters.find(seat);
                 int ticketID = manager.getTicketID();
                 if (airplane->bookTicket(seatIndex, row, username, flight, date, ticketID)) {
-                    std::cout << "Ticket booked" << std::endl;
+                    std::cout << "Ticket booked" <<  std::endl;
+                    std::cout << "Ticket ID: " << ticketID << std::endl;
                 }
                 else {
                     std::cout << "Ticket not booked" << std::endl;
                 }
+            }
+        }
+        else if (command == "return") {
+            int ticketID;
+            std::cout << "Enter ticket ID: ";
+            std::cin >> ticketID;
+            for (const auto& airplane : manager.getManagingMap()) {
+                airplane.second->returnTicket(ticketID);
             }
         }
     }

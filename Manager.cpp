@@ -13,3 +13,7 @@ Airplane* Manager::searchAirplane(const std::string& date, const std::string& fl
 int Manager::getTicketID() {
     return ticketID++;
 }
+
+std::map<std::pair<std::string, std::string>, Airplane*>& Manager::getManagingMap() {
+    return managingMap;
+}

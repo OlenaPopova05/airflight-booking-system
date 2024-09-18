@@ -36,3 +36,16 @@ bool Airplane::bookTicket(int seat, int row, const std::string& username,
     }
     return false;
 }
+
+void Airplane::returnTicket(int ticketID) {
+    for (auto& row : airplaneSeats) {
+        for (auto& seat : row) {
+            if (seat.getTicketID() == ticketID) {
+                seat.setAvailability(true);
+                seat.setUsername("");
+                seat.setTicketID(0);
+                std::cout << "Ticket returned with refund of " << seat.getPrice() << "$" << std::endl;
+            }
+        }
+    }
+}
