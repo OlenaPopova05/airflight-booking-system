@@ -49,3 +49,14 @@ void Airplane::returnTicket(int ticketID) {
         }
     }
 }
+
+Ticket* Airplane::viewTicketByID(int ticketID) {
+    for (auto& row : airplaneSeats) {
+        for (auto& seat : row) {
+            if (seat.getTicketID() == ticketID) {
+                return &seat;
+            }
+        }
+    }
+    return nullptr;
+}

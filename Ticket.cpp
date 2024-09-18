@@ -40,6 +40,14 @@ int Ticket::getPrice() const {
     return price;
 }
 
+std::string Ticket::getFlightNumber() const {
+    return flightNumber;
+}
+
+std::string Ticket::getDate() const {
+    return date;
+}
+
 void Ticket::setUsername(const std::string& username) {
     this->username = username;
 }
