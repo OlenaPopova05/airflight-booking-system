@@ -1,4 +1,5 @@
 #include "Airplane.h"
+#include "Manager.h"
 #include <iostream>
 
 Airplane::Airplane(const std::string& date, const std::string& flight, int seat,
@@ -23,4 +24,15 @@ void Airplane::getAvailableSeats() const {
 
 int Airplane::getSeat() const {
     return seat;
+}
+
+bool Airplane::bookTicket(int seat, int row, const std::string& username,
+                          const std::string& flightNumber, const std::string& date, int ticketID) {
+    if (airplaneSeats[row][seat].getAvailability()) {
+        airplaneSeats[row][seat].setAvailability(false);
+        airplaneSeats[row][seat].setUsername(username);
+        airplaneSeats[row][seat].setTicketID(ticketID);
+        return true;
+    }
+    return false;
 }

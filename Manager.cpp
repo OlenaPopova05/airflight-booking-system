@@ -1,12 +1,15 @@
 #include "Manager.h"
 
-using namespace std;
+Manager::Manager(int ticketID) : ticketID(ticketID) {}
 
-void Manager::addAirplane(const string& date, const string& flight, Airplane* airplane) {
-    managingMap[pair(date, flight)] = airplane;
+void Manager::addAirplane(const std::string& date, const std::string& flight, Airplane* airplane) {
+    managingMap[std::pair(date, flight)] = airplane;
 }
 
-Airplane* Manager::searchAirplane(const string& date, const string& flight) {
-    return managingMap[pair(date, flight)];
+Airplane* Manager::searchAirplane(const std::string& date, const std::string& flight) {
+    return managingMap[std::pair(date, flight)];
 }
 
+int Manager::getTicketID() {
+    return ticketID++;
+}

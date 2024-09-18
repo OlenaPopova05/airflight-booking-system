@@ -17,9 +17,8 @@ public:
 
     void getAvailableSeats() const;
     std::vector<std::string> getBookedSeats() const;
-    void bookTicket(const std::string& seat, int row, const std::string& username,
-                    const std::string& flightNumber, const std::string& date,
-                    const std::string& price, int ticketID);
+    bool bookTicket(int seat, int row, const std::string& username,
+                    const std::string& flightNumber, const std::string& date, int ticketID);
     void returnTicket(int ticketID);
     Ticket* viewTicketByID(int ticketID);
     std::vector<Ticket> viewTicketsByUser() const;

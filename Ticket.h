@@ -22,6 +22,8 @@ public:
     int getRow() const;
     int getSeat() const;
     int getPrice() const;
+    void setUsername(const std::string& username);
+    void setTicketID(int ticketID);
 };
 
 

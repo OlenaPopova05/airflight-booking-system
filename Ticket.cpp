@@ -40,3 +40,11 @@ int Ticket::getPrice() const {
     return price;
 }
 
+void Ticket::setUsername(const std::string& username) {
+    this->username = username;
+}
+
+void Ticket::setTicketID(int ticketID) {
+    this->ticketID = ticketID;
+}
+
