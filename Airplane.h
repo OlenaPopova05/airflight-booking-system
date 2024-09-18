@@ -16,7 +16,7 @@ public:
              const std::vector<std::vector<Ticket>>& airplaneSeats);
 
     void getAvailableSeats() const;
-    std::vector<std::string> getBookedSeats() const;
+    void getBookedSeats() const;
     bool bookTicket(int seat, int row, const std::string& username,
                     const std::string& flightNumber, const std::string& date, int ticketID);
     void returnTicket(int ticketID);

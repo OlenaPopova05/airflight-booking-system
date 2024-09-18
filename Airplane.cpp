@@ -72,3 +72,16 @@ std::vector<Ticket> Airplane::viewTicketsByUser() const {
     }
     return tickets;
 }
+
+void Airplane::getBookedSeats() const {
+    std::string letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    for (const auto& row : airplaneSeats) {
+        for (const auto& seat : row) {
+            if (!seat.getAvailability()) {
+                std::cout << "Seat: " << seat.getRow() << letters[seat.getSeat() - 1] << std::endl;
+                std::cout << "Username: " << seat.getUsername() << std::endl;
+                std::cout << "Price: " << seat.getPrice() << "$" << std::endl;
+            }
+        }
+    }
+}

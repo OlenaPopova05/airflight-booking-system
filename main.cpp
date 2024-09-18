@@ -106,6 +106,19 @@ int main() {
                 std::cout << "No tickets found" << std::endl;
             }
         }
+        else if (command == "viewBooked") {
+            std::string date, flight;
+            std::cout << "Enter date and flight: ";
+            std::cin >> date >> flight;
+            Airplane* airplane = manager.searchAirplane(date, flight);
+            if (airplane == nullptr) {
+                std::cout << "Airplane not found" << std::endl;
+            }
+            else {
+                std::cout << "Booked seats: " << std::endl;
+                airplane->getBookedSeats();
+            }
+        }
     }
     return 0;
 }
