@@ -13,7 +13,8 @@ private:
     bool availability;
 public:
     Ticket(int row, int seat, const std::string& username, const std::string& flightNumber,
-        const std::string& date, int price, int ticketID, bool availability);
+        const std::string& date, int price, int ticketID, bool availability): row(row), seat(seat),
+        username(username), flightNumber(flightNumber), date(date), price(price), ticketID(ticketID), availability(availability) {};
 
     bool getAvailability() const;
     void setAvailability(bool availability);

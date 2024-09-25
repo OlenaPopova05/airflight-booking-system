@@ -40,7 +40,7 @@ int main() {
                 std::string letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
                 int seatIndex = letters.find(seat);
                 int ticketID = manager.getTicketID();
-                if (airplane->bookTicket(seatIndex, row, username, flight, date, ticketID)) {
+                if (airplane->bookTicket(seatIndex, row, username, ticketID)) {
                     std::cout << "Ticket booked" <<  std::endl;
                     std::cout << "Ticket ID: " << ticketID << std::endl;
                 }
@@ -73,12 +73,13 @@ int main() {
                     std::cout << "Date: " << ticket->getDate() << std::endl;
                     std::cout << "Seat: " << row << seat << std::endl;
                     std::cout << "Price: " << ticket->getPrice() << "$" << std::endl;
+                    std::cout << "User: " << ticket->getUsername() << std::endl;
                     found = true;
                     break;
                 }
-                if (!found) {
-                    std::cout << "Ticket not found" << std::endl;
-                }
+            }
+            if (!found) {
+                std::cout << "Ticket not found" << std::endl;
             }
         }
         else if (command == "viewUser") {

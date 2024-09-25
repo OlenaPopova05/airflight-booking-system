@@ -1,7 +1,5 @@
 #include "Manager.h"
 
-Manager::Manager(int ticketID) : ticketID(ticketID) {}
-
 void Manager::addAirplane(const std::string& date, const std::string& flight, Airplane* airplane) {
     managingMap[std::pair(date, flight)] = airplane;
 }

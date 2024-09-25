@@ -69,7 +69,7 @@ void FileReader::read(const std::string& filename, Manager& manager) {
             }
         }
 
-        Airplane* airplane = new Airplane(date, flight, seatCount, rowPriceData, airplaneSeats);
+        Airplane* airplane = new Airplane(airplaneSeats);
         manager.addAirplane(date, flight, airplane);
     }
     file.close();

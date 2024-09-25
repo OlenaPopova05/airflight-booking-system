@@ -7,5 +7,4 @@ private:
     std::string filename;
 public:
     void read(const std::string& filename, Manager& manager);
-    void fillManager(Manager& manager);
 };
